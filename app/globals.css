@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Los Hijos De Benita — brand tokens
+  ----------------------------------
+  Six-color palette + Söhne type system, exposed as Tailwind v4 @theme tokens
+  so utilities like bg-ink, text-cream, font-display, text-h2 work everywhere.
+*/
+
+@theme {
+  /* Brand palette */
+  --color-ink: #171411;          /* near-black — page bg */
+  --color-bark: #2a1e16;         /* dark brown — elevated surfaces */
+  --color-cream: #f0e9dc;        /* warm cream — primary text & filled buttons */
+  --color-wheat: #c29f77;        /* tan — accents */
+  --color-mist: #a8b5ba;         /* light slate */
+  --color-slate: #7e8f98;        /* slate */
+
+  /* Font families */
+  --font-sans: var(--font-sohne), system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-sohne), system-ui, sans-serif;
+
+  /* Type scale — Söhne, weights baked into utilities below */
+  --text-display: 4rem;          /* 64px — Display */
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-h1: 3.25rem;             /* 52px */
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-h2: 2.25rem;             /* 36px */
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+
+  --text-h3: 1.375rem;            /* 22px */
+  --text-h3--line-height: 1.3;
+
+  --text-body: 1.125rem;          /* 18px */
+  --text-body--line-height: 1.55;
+
+  --text-small: 1rem;             /* 16px */
+  --text-small--line-height: 1.55;
+
+  --text-caption: 0.8125rem;      /* 13px */
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.04em;
+
+  --text-eyebrow: 0.75rem;        /* 12px */
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.18em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  background: var(--color-ink);
+  color: var(--color-cream);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Selection styling */
+::selection {
+  background: var(--color-wheat);
+  color: var(--color-ink);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
 }
