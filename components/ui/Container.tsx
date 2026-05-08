@@ -12,7 +12,7 @@ interface ContainerProps {
  */
 export function Container({ children, className = "", as: Tag = "div" }: ContainerProps) {
   return (
-    <Tag className={`mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16 ${className}`}>
+    <Tag className={`w-full px-6 md:px-10 lg:px-16 ${className}`}>
       {children}
     </Tag>
   );

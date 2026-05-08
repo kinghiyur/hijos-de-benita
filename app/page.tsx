@@ -1,21 +1,21 @@
+import { Header } from "../components/layout/Header";
 import { Hero } from "../components/home/Hero";
-import { BreadWithAStory } from "../components/home/BreadWithAStory";
 import { OurBreads } from "../components/home/OurBreads";
 import { HowItWorks } from "../components/home/HowItWorks";
-import { Testimonials } from "../components/home/Testimonials";
-import { CTASection } from "../components/home/CTASection";
+import { BreadWithAStory } from "../components/home/BreadWithAStory";
+import { Faq } from "../components/home/Faq";
 import { Footer } from "../components/layout/Footer";
 
 export default function Home() {
   return (
     <>
+      <Header />
       <main className="flex flex-1 flex-col">
         <Hero />
-        <BreadWithAStory />
         <OurBreads />
         <HowItWorks />
-        <Testimonials />
-        <CTASection />
+        <BreadWithAStory />
+        <Faq />
       </main>
       <Footer />
     </>

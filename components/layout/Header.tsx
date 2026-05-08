@@ -1,43 +1,56 @@
 import Link from "next/link";
 import { Wordmark } from "./Wordmark";
 import { Button } from "../ui/Button";
+import { CartLink } from "../cart/CartLink";
 
 const navItems = [
-  { label: "About", href: "#about" },
+  { label: "Our Breads", href: "#menu" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Menu", href: "#menu" },
+  { label: "About", href: "#about" },
   { label: "FAQ", href: "#faq" },
 ];
 
 /**
- * Header overlays the hero — transparent bg, cream type, minimal chrome.
- * Sticky-ish placement is left to the parent (Hero positions it absolutely).
+ * Page header — light theme. Two rows:
+ *  - top: a small "Home" page-tag, faintly visible (analogous to a
+ *    breadcrumb / current-section indicator from the design)
+ *  - bottom: wordmark left, primary nav + cart + Order Now button right
+ *
+ * Lives in normal page flow above the contained Hero banner; not overlaid.
  */
 export function Header() {
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-6 md:px-10 md:py-8 lg:px-16">
-        <Link href="/" className="text-[11px] tracking-[0.02em]">
-          <Wordmark className="text-[13px] md:text-[14px]" />
-        </Link>
+    <header className="w-full">
+      <div className="w-full px-6 md:px-10 lg:px-16">
+        {/* Page tag — quiet "Home" label per the design */}
+        <p className="pt-4 text-[12px] tracking-[0.02em] text-ink/40">Home</p>
 
-        <nav aria-label="Primary" className="flex items-center gap-6 md:gap-10">
-          <ul className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream/85 transition-colors hover:text-cream"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Button href="#order" variant="cream" size="sm">
-            Order Now
-          </Button>
-        </nav>
+        <div className="flex items-center justify-between py-5 md:py-6">
+          <Link href="/" aria-label="Los Hijos De Benita — home">
+            <Wordmark />
+          </Link>
+
+          <nav aria-label="Primary" className="flex items-center gap-5 md:gap-7">
+            <ul className="hidden items-center gap-7 md:flex">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[13px] text-ink/80 transition-colors hover:text-ink"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <CartLink />
+
+            <Button href="#order" variant="cream" size="sm">
+              Order Now
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );

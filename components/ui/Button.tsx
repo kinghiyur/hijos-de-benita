@@ -26,18 +26,20 @@ interface ButtonProps extends BaseProps {
 type Props = AnchorProps | ButtonProps;
 
 const variantClasses: Record<Variant, string> = {
-  // Filled cream — primary CTA (e.g. ORDER NOW)
+  // Filled ink — primary CTA on the light page (Order Now, See All).
+  // Variant name kept as `cream` for compatibility with existing call sites;
+  // the visual is now ink-fill / paper-text.
   cream:
-    "bg-cream text-ink hover:bg-wheat hover:text-ink",
-  // Filled bark — secondary on cream surfaces
+    "bg-ink text-paper hover:bg-bark hover:text-paper",
+  // Filled bark — alternate dark variant
   bark:
-    "bg-bark text-cream hover:bg-ink hover:text-cream",
-  // Outline — used in hero (DISCOVER over imagery)
+    "bg-bark text-paper hover:bg-ink hover:text-paper",
+  // Outline — used over imagery (e.g. on hero) so still references cream
   outline:
-    "border border-cream/70 text-cream hover:bg-cream hover:text-ink",
-  // Ghost — quiet link-style
+    "border border-paper/70 text-paper hover:bg-paper hover:text-ink",
+  // Ghost — quiet link-style on light bg
   ghost:
-    "text-cream/70 hover:text-cream",
+    "text-ink/70 hover:text-ink",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -60,7 +62,7 @@ export function Button(props: Props) {
   const classes = [
     "inline-flex items-center justify-center rounded-full uppercase",
     "font-semibold transition-colors duration-200",
-    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream",
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
     sizeClasses[size],
     variantClasses[variant],
     className,

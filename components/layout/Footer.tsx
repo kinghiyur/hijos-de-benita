@@ -1,64 +1,39 @@
-import Link from "next/link";
+import { Wordmark } from "./Wordmark";
 import { Container } from "../ui/Container";
 
-const navigateLinks = [
-  { label: "About", href: "#about" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Menu", href: "#menu" },
-  { label: "FAQ", href: "#faq" },
-];
-
-const connectLinks = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "Email", href: "mailto:hello@loshijosdebenita.com" },
-];
-
+/**
+ * Footer per the redesign — wide bread image strip pinned to the bottom
+ * of the page, followed by the wordmark and a "made with <3" credit.
+ */
 export function Footer() {
   return (
-    <footer className="border-t border-cream/10 py-16 md:py-20">
-      <Container>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          <div>
-            <p className="text-[15px] font-semibold text-cream">Los Hijos De Benita</p>
-            <p className="mt-3 text-[13px] text-cream/55">Burlington, Ontario</p>
-            <p className="mt-1 text-[13px] text-cream/55">Sourdough micro bakery</p>
-          </div>
-
-          <FooterColumn title="Navigate" links={navigateLinks} />
-          <FooterColumn title="Connect" links={connectLinks} />
+    <footer className="mt-10 md:mt-16">
+      {/* Image strip — full bleed within the page padding so it reads as a
+          horizon line. Aspect is short and wide. */}
+      <div className="px-6 md:px-10 lg:px-16">
+        <div
+          className="relative w-full overflow-hidden rounded-[14px]"
+          style={{ aspectRatio: "16/3" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/breads/seedless.jpg"
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 35%" }}
+          />
         </div>
+      </div>
 
-        <p className="mt-16 text-[11px] uppercase tracking-[0.18em] text-cream/35">
-          © {new Date().getFullYear()} Los Hijos De Benita
-        </p>
+      <Container>
+        <div className="py-10 md:py-14">
+          <Wordmark className="text-[12px] md:text-[13px]" />
+          <p className="mt-6 text-[13px] text-ink/55">
+            Made with &lt;3 in Ontario, Canada.
+          </p>
+        </div>
       </Container>
     </footer>
-  );
-}
-
-interface FooterColumnProps {
-  title: string;
-  links: ReadonlyArray<{ label: string; href: string }>;
-}
-
-function FooterColumn({ title, links }: FooterColumnProps) {
-  return (
-    <div>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream/55">
-        {title}
-      </p>
-      <ul className="mt-4 space-y-2">
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className="text-[14px] text-cream/85 transition-colors hover:text-cream"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

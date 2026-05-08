@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { sohne } from "./fonts";
+import { sohne, greatVibes } from "./fonts";
+import { CartProvider } from "../components/cart/CartProvider";
+import { CartDrawer } from "../components/cart/CartDrawer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,10 +18,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sohne.variable} h-full antialiased`}
+      className={`${sohne.variable} ${greatVibes.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ink text-cream font-sans">
-        {children}
+      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

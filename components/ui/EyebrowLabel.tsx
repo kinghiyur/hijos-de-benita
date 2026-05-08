@@ -11,7 +11,7 @@ interface EyebrowLabelProps {
 export function EyebrowLabel({ children, className = "" }: EyebrowLabelProps) {
   return (
     <p
-      className={`text-[11px] font-semibold uppercase tracking-[0.18em] text-cream/60 ${className}`}
+      className={`text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/55 ${className}`}
     >
       {children}
     </p>

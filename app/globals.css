@@ -9,9 +9,10 @@
 
 @theme {
   /* Brand palette */
-  --color-ink: #171411;          /* near-black — page bg */
+  --color-ink: #171411;          /* near-black — primary text & filled buttons */
   --color-bark: #2a1e16;         /* dark brown — elevated surfaces */
-  --color-cream: #f0e9dc;        /* warm cream — primary text & filled buttons */
+  --color-paper: #f4efe5;        /* warm white — page background */
+  --color-cream: #f0e9dc;        /* warm cream — secondary surfaces & on-image type */
   --color-wheat: #c29f77;        /* tan — accents */
   --color-mist: #a8b5ba;         /* light slate */
   --color-slate: #7e8f98;        /* slate */
@@ -19,6 +20,7 @@
   /* Font families */
   --font-sans: var(--font-sohne), system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --font-display: var(--font-sohne), system-ui, sans-serif;
+  --font-script: var(--font-script), cursive;
 
   /* Type scale — Söhne, weights baked into utilities below */
   --text-display: 4rem;          /* 64px — Display */
@@ -52,14 +54,14 @@
 }
 
 html, body {
-  background: var(--color-ink);
-  color: var(--color-cream);
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 /* Selection styling */
 ::selection {
-  background: var(--color-wheat);
-  color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 /* Smooth scroll for in-page anchors */

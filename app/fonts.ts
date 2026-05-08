@@ -1,4 +1,12 @@
 import localFont from "next/font/local";
+import { Great_Vibes } from "next/font/google";
+
+export const greatVibes = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+});
 
 // Söhne (Test) — brand sans. Five weights mapped from Klim's standard scale.
 // Leicht 300 · Buch 400 · Kräftig 500 · Halbfett 600 · Fett 800
