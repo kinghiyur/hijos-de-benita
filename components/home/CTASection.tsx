@@ -1,11 +1,9 @@
-import { Container } from "../ui/Container";
 import { Button } from "../ui/Button";
 
 export function CTASection() {
   return (
-    <section id="order" className="py-28 md:py-36">
-      <Container>
-        <div className="mx-auto max-w-2xl text-center">
+    <section id="order" className="bg-bark py-28 md:py-36 px-6 md:px-10 lg:px-16">
+      <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-[clamp(1.875rem,3.4vw,2.5rem)] font-extrabold leading-[1.05] tracking-[-0.015em] text-cream">
             Ready to taste the difference
           </h2>
@@ -18,7 +16,6 @@ export function CTASection() {
             </Button>
           </div>
         </div>
-      </Container>
     </section>
   );
 }

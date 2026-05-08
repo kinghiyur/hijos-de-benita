@@ -1,5 +1,4 @@
 import { Wordmark } from "./Wordmark";
-import { Container } from "../ui/Container";
 
 /**
  * Footer per the redesign — wide bread image strip pinned to the bottom
@@ -26,14 +25,14 @@ export function Footer() {
         </div>
       </div>
 
-      <Container>
+      <div className="px-6 md:px-10 lg:px-16">
         <div className="py-10 md:py-14">
           <Wordmark className="text-[12px] md:text-[13px]" />
           <p className="mt-6 text-[13px] text-ink/55">
             Made with &lt;3 in Ontario, Canada.
           </p>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

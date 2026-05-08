@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Container } from "../ui/Container";
 import { EyebrowLabel } from "../ui/EyebrowLabel";
 
 interface Testimonial {
@@ -178,8 +177,8 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 md:py-28">
-      <Container>
+    <section className="py-20 md:py-28 px-6 md:px-10 lg:px-16">
+      <div>
         <EyebrowLabel>Testimonials</EyebrowLabel>
 
         <div
@@ -295,13 +294,13 @@ export function Testimonials() {
               aria-current={i === active}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === active
-                  ? "w-6 bg-cream"
-                  : "w-1.5 bg-cream/30 hover:bg-cream/60"
+                  ? "w-6 bg-ink"
+                  : "w-1.5 bg-ink/25 hover:bg-ink/50"
               }`}
             />
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
