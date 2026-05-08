@@ -57,7 +57,7 @@ export function OurBreads() {
           <div className="flex items-center gap-2">
             <CarouselButton direction="prev" disabled={isFirst} onClick={() => setPage((p) => p - 1)} />
             <CarouselButton direction="next" disabled={isLast} onClick={() => setPage((p) => p + 1)} />
-            <Button href="#menu" variant="cream" size="sm" className="ml-1">
+            <Button href="/shop" variant="cream" size="sm" className="ml-1">
               See All
             </Button>
           </div>

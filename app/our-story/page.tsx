@@ -59,11 +59,25 @@ export default function OurStoryPage() {
 
         {/* ── Opening statement ── */}
         <section className="py-16 md:py-24 px-6 md:px-10 lg:px-16">
-          <p className="text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-[1.3] tracking-[-0.01em] text-ink max-w-3xl">
-            &ldquo;We bake once a week. Small batches, real sourdough,
-            pre-order only. Every loaf traces back to a single starter
-            we&rsquo;ve been keeping alive for years. Her name is Benita.&rdquo;
-          </p>
+          <div className="flex items-start gap-8 md:gap-14">
+            <p className="flex-1 text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-[1.3] tracking-[-0.01em] text-ink max-w-3xl">
+              &ldquo;We bake once a week. Small batches, real sourdough,
+              pre-order only. Every loaf traces back to a single starter
+              we&rsquo;ve been keeping alive for years. Her name is Benita.&rdquo;
+            </p>
+            {/* Benita badge — rotating stamp */}
+            <div
+              className="hidden md:block flex-shrink-0 h-28 w-28 lg:h-36 lg:w-36 animate-spin"
+              style={{ animationDuration: "20s" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/benita-badge.svg"
+                alt="Los Hijos De Benita"
+                className="h-full w-full"
+              />
+            </div>
+          </div>
         </section>
 
         {/* ── Benita the starter ── */}

@@ -5,8 +5,8 @@ import { CartLink } from "../cart/CartLink";
 
 const navItems = [
   { label: "Our Breads", href: "#menu" },
-  { label: "How it works", href: "#how-it-works" },
   { label: "Our Story", href: "/our-story" },
+  { label: "Shop", href: "/shop" },
   { label: "FAQ", href: "#faq" },
 ];
 
